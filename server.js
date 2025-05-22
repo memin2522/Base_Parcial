@@ -1,7 +1,7 @@
 const express = require('express');
-const FirestoreService = require('./nosql/firestore_service');
-const FirestoreQuery = require('./nosql/firestore_query');
-const SqlService = require('./sql/connection');
+const FirestoreService = require('./views/nosql/firestore_service');
+const FirestoreQuery = require('./views/nosql/firestore_query');
+const SqlService = require('./views/sql/connection');
 
 const app = express();
 const port = 3000;

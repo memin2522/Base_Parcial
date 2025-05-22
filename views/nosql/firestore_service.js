@@ -1,16 +1,11 @@
-const { db } = require('./firebase_init');
-const {
-  collection,
-  getDocs,
-  getDoc,
-  addDoc,
-  setDoc,
-  doc
-} = require('firebase-admin/firestore');
+const admin = require('firebase-admin');
+const { getFirestore, doc, setDoc, getDoc, collection, getDocs } = require('firebase-admin/firestore');
+
 
 class FirestoreService {
   constructor(collectionName) {
-    this.collectionRef = collection(db, collectionName);
+    this.db = getFirestore(); // Get Firestore instance
+    this.collectionRef = this.db.collection(collectionName);
   }
 
   async getAllDocuments() {
